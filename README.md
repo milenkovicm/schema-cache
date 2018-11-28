@@ -1,4 +1,4 @@
-# Schema Cache
+# Schema Cache [![Build Status](https://api.travis-ci.org/milenkovicm/schema-cache.svg?branch=master)](https://travis-ci.org/milenkovicm/schema-cache)
 
 An simple example how to to load a (json) data definitions (schemas) from remote repository and save them in a local store.
 Any subsequent calls should be served from the local store, unless data retention policy have not removed local copy.
