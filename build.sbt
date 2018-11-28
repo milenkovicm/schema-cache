@@ -18,7 +18,6 @@ lazy val `schema-cache` =
         library.jacksonScala,
         //library.scalaLogging
       ),
-      libraryDependencies ++= library.akka,
       libraryDependencies ++= library.akkaHttp
     )
 
@@ -33,29 +32,21 @@ lazy val library =
       val scalaTest     = "3.0.5"
       val scalaCache    = "0.26.0"
       val slf4j         = "1.7.25"
-      val akka          = "2.5.18"
       val akkaHttp      = "10.1.5"
       val jsonValidator = "2.2.10"
       val jacksonScala  = "2.9.7"
     }
 
     val scalaTest          = "org.scalatest"                %% "scalatest"            % Version.scalaTest
-    val scalaCacheCaffeine = "com.github.cb372"             %% "scalacache-caffeine"  % Version.scalaCache % Test
     val scalaCache         = "com.github.cb372"             %% "scalacache-caffeine"  % Version.scalaCache
     val slf4jSimple        = "org.slf4j"                    % "slf4j-simple"          % Version.slf4j
+    val scalaCacheCaffeine = "com.github.cb372"             %% "scalacache-caffeine"  % Version.scalaCache % Test
     val jacksonScala       = "com.fasterxml.jackson.module" %% "jackson-module-scala" % Version.jacksonScala % Test
     val jsonValidator      = "com.github.java-json-tools"   % "json-schema-validator" % Version.jsonValidator % Test
 
     val akkaHttp = Seq(
-      "com.typesafe.akka" %% "akka-http-core"    % Version.akkaHttp,
-      "com.typesafe.akka" %% "akka-http"         % Version.akkaHttp,
+      "com.typesafe.akka" %% "akka-http-core"    % Version.akkaHttp % Test,
       "com.typesafe.akka" %% "akka-http-testkit" % Version.akkaHttp % Test
-    )
-
-    val akka = Seq(
-      "com.typesafe.akka" %% "akka-actor"          % Version.akka,
-      "com.typesafe.akka" %% "akka-stream"         % Version.akka,
-      "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka
     )
 
   }
