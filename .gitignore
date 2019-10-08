@@ -34,3 +34,6 @@ snapshots
 
 # Log files
 *.log
+
+.metals
+.bloop
